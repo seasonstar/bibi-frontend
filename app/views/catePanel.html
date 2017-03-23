@@ -1,0 +1,26 @@
+<div class='cate-panel' ng-show="show">
+    <div class='cate-panel-overlay' ng-click='hidePanel()'></div>
+    <div class='cate-panel-dialog'>
+        <div class='cate-panel-dialog-content'>
+            <div class="header headerBox">
+                <a class="header-left icon close" href
+                    ng-click="hidePanel()">
+                </a>
+                <div class="header-input-box">
+                    <input placeholder="请输入商品名称" type="text" ng-model="query">
+                </div>
+                <a class="header-right icon search1"
+                    href ng-click="search(query)">
+                </a>
+            </div>
+            <div class="view-container categories" ng-hide="searchParams && item.length>0">
+                <div class="cate-row" ng-repeat="cate in categories">
+                    <div class="main">{{cate.cn}}</div>
+                    <div class="sub-list">
+                        <div class="sub" ng-repeat="sub in cate.sub_list"><a href ng-click="goCategory(sub.en)">{{sub.cn}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

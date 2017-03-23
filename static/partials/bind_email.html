@@ -1,0 +1,21 @@
+<section class="login">
+<!-- 登录表单 -->
+<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+<form ng-submit="bind()">
+    <table class="table login-table">
+        <tbody>
+        <tr >
+            <td class="label">
+                邮箱
+            </td>
+            <td class="input-control">
+                <input type="email" autocomplete="off" class="form-control" name="email" ng-model="loginForm.email" required>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="login-btn-group">
+        <button type="submit" class="login-btn" ng-disabled="disabled">绑定并登陆</button>
+    </div>
+</form>
+</section>

@@ -1,0 +1,23 @@
+<!-- 图片轮播 -->
+<section class="home-carousel clearfix" ng-cloak>
+    <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex">
+        <li ng-repeat="img in images">
+            <img ng-src="{{img.url}}" alt="">
+        </li>
+        <div rn-carousel-indicators ng-if="images.length > 1" slides="images" rn-carousel-index="carouselIndex"></div>
+    </ul>
+</section>
+
+<!-- 商品列表 -->
+<section class="board-products clearfix">
+    <div class="board-title">
+        {{board.title}}
+    </div>
+    <div class="board-desc">
+        {{board.desc}}
+    </div>
+    <div class="products-list clearfix">
+        <item-box ng-repeat="item in board.items"></item-box>
+    </div>
+
+</section>

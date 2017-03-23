@@ -1,0 +1,34 @@
+<section class="login">
+<!-- 登录表单 -->
+<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+<form ng-submit="login()">
+    <table class="table login-table">
+        <tbody>
+        <tr >
+            <td class="label">
+                邮箱
+            </td>
+            <td class="input-control">
+                <input type="email" autocomplete="off" class="form-control" name="email" ng-model="loginForm.email" required>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                密码
+            </td>
+            <td class="input-control">
+                <input type="password" autocomplete="off" class="form-control" name="password" ng-model="loginForm.password" required>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="login-btn-group">
+        <button type="submit" class="login-btn" ng-disabled="disabled">登陆</button>
+    </div>
+    <div class="third-party-box">
+        <p>第三方账号登陆</p>
+
+        <a ng-repeat="link in links" ng-href="{{link[0]}}" class="login-icon {{link[1]}}"></a>
+    </div>
+</form>
+</section>

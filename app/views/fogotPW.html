@@ -1,0 +1,21 @@
+<section class="fogotPW">
+<!-- 忘记密码表单 -->
+<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+<form ng-submit="fogotPW()">
+    <table class="table fogotPW-table">
+        <tbody>
+        <tr >
+            <td class="label">
+                邮箱
+            </td>
+            <td class="input-control">
+                <input type="email" autocomplete="off" class="form-control" name="email" ng-model="fogotPWForm.email" required>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="login-btn-group">
+        <button type="submit" class="fogotPW-btn" ng-disabled="disabled">发送邮件</button>
+    </div>
+</form>
+</section>

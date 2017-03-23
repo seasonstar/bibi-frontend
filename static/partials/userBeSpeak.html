@@ -1,0 +1,141 @@
+<!-- 预约小助手 -->
+<section>
+    <div class="email_div">
+        <h3 class="bor_none">&nbsp;</h3>
+        <ul>
+            <li>
+                <label for="yyzs1">
+                    <b>预约助手</b>
+                    <span class="text_r"><input id="yyzs1" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+        </ul>
+        <h3 class="bor_none">
+            <p class="yyzs_ye">账户可用余额</p>
+            <p class="yyzs_ye1">¥ 2,003,273.000</p>
+            <span>金额设置</span>
+        </h3>
+        <ul>
+            <li>
+                <label for="yyzs2">
+                    <input type="radio" id="yyzs2" class="radio_btn" /> 账号可用余额
+                </label>
+            </li>
+            <li>
+                <label for="yyzs3">
+                    <b><input type="radio" id="yyzs3" class="radio_btn"/> 项目名称</b>
+                            <span class="text_r">
+                            <input type="text" class="input_none1" value="1000" />
+                            <i class="icon_right"></i>
+                        </span>
+                </label>
+            </li>
+        </ul>
+
+        <h3 class="bor_none">类型选择</h3>
+        <ul>
+            <li>
+                <label for="yyzs4">
+                    <b>银票红</b>
+                    <span class="text_r"><input id="yyzs4" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs5">
+                    <b>银票纯</b>
+                    <span class="text_r"><input id="yyzs5" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs6">
+                    <b>银商理财</b>
+                    <span class="text_r"><input id="yyzs6" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+        </ul>
+
+        <h3 class="bor_none">项目期限（天）</h3>
+        <ul>
+            <li>
+                <label for="yyzs7">
+                    <b>0-30</b>
+                    <span class="text_r"><input id="yyzs7" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs8">
+                    <b>31-60</b>
+                    <span class="text_r"><input id="yyzs8" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs9">
+                    <b>61-90</b>
+                    <span class="text_r"><input id="yyzs9" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs10">
+                    <b>91-120</b>
+                    <span class="text_r"><input id="yyzs10" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs11">
+                    <b>121-180</b>
+                    <span class="text_r"><input id="yyzs11" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs12">
+                    <b>180以上</b>
+                    <span class="text_r"><input id="yyzs12" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+        </ul>
+
+        <h3 class="bor_none">项目利率</h3>
+        <ul>
+            <li>
+                <label for="yyzs13">
+                    <b>0-6.8%</b>
+                    <span class="text_r"><input id="yyzs13" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs14">
+                    <b>6.8-9.00%</b>
+                    <span class="text_r"><input id="yyzs14" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs15">
+                    <b>9.00-12.00%</b>
+                    <span class="text_r"><input id="yyzs15" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+            <li>
+                <label for="yyzs16">
+                    <b>12.00%以上</b>
+                    <span class="text_r"><input id="yyzs16" type="checkbox" class="check_btn"/></span>
+                </label>
+            </li>
+        </ul>
+        <a href="#" class="btn_a">完成设置</a>
+    </div>
+</section>
+<!-- 预约小助手 -->
+
+<!-- 弹出框 -->
+<section class="pop" id="pop" ng-show="showPopup">
+    <h3><a href="javascript:;" class="close_icon" id="close"></a>请输入交易密码</h3>
+    <div class="pop_con">
+        <div class="pop_posi">
+            <input type="password" placeholder="请输入支付密码">
+            <a href="javascript:;" class="btn_a">确 定</a>
+        </div>
+        <p><a href="#">忘记密码？</a></p>
+    </div>
+</section>
+<!-- 筛选mask -->
+<div class="mask-show-filter" ng-show="showPopup"></div>

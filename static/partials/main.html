@@ -1,0 +1,47 @@
+<!-- 图片轮播 -->
+
+<section class="homepage-carousel clearfix" ng-cloak>
+    <div class="carousel">
+        <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-auto-slide>
+          <li ng-repeat="banner in banners">
+            <img ng-src="{{ banner.img }}" ng-click="redirectTo(banner)" alt="" />
+          </li>
+        </ul>
+        <div rn-carousel-indicators ng-if="banners.length > 1" slides="banners" rn-carousel-index="carouselIndex"></div>
+    </div>
+</section>
+
+<!-- 公司介绍 -->
+<section class="homepage-intro clearfix">
+    <div class="intro-box">
+        <i class="icon easy-buy"></i>
+        <p>一键下单</p>
+    </div>
+    <div class="intro-box">
+        <i class="icon china-made"></i>
+        <p>国内质造</p>
+    </div>
+    <div class="intro-box">
+        <i class="icon fire-speed"></i>
+        <p>火速发货</p>
+    </div>
+    <div class="intro-box">
+        <i class="icon direct-route"></i>
+        <p>直达海外</p>
+    </div>
+</section>
+
+<!-- 商品列表 -->
+<section class="homepage-products clearfix">
+    <div class="category-title">
+        美比严选
+    </div>
+    <div class="products-list clearfix">
+        <item-box ng-repeat="item in items"></item-box>
+    </div>
+
+</section>
+<section class="footer" style="margin: 30px; text-align:center">
+
+    Copyright © 2015  粤ICP备15089582号
+</section>

@@ -1,0 +1,103 @@
+<!-- 图片轮播 -->
+<section class="homepage-carousel clearfix" ng-cloak>
+    <div class="carousel">
+        <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-auto-slide>
+          <li ng-repeat="banner in banners">
+            <img ng-src="{{ banner.img }}" ng-click="redirectTo(banner)" alt="" />
+          </li>
+        </ul>
+        <div rn-carousel-indicators ng-if="banners.length > 1" slides="banners" rn-carousel-index="carouselIndex"></div>
+    </div>
+</section>
+
+<section class="express-box clearfix">
+    <ul class="ui-grid">
+        <li class="grid">
+            <a href="#/orders">
+            <span class="grid-icon order"></span>
+            <span class="entry">我的订单</span>
+            </a>
+        </li>
+        <li class="grid">
+            <a href="#/express">
+            <span class="grid-icon checklist"></span>
+            <span class="entry">代寄出国</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<section class="homepage-intro clearfix">
+    <cate-panel show="cateShown"></cate-panel>
+    <div class="">
+        <div class="intro-box">
+            <a ng-click="toggleCatePanel()">
+                <i class="icon1 category"></i>
+                <p>商品分类</p>
+            </a>
+        </div>
+        <div class="intro-box">
+            <a href="#/calculate">
+                <i class="icon1 calculate"></i>
+                <p>运费估算</p>
+            </a>
+        </div>
+        <div class="intro-box">
+            <a href="#/limit">
+                <i class="icon1 limit"></i>
+                <p>邮寄限制</p>
+            </a>
+        </div>
+        <div class="intro-box">
+            <a href="http://www.maybi.cn">
+                <i class="icon1 info"></i>
+                <p>关于美比</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- 商品列表 -->
+<section class="homepage-products clearfix">
+    <div class="category-title">
+        美比严选<span class="homepage-noti">全场满$79.99免邮</span>
+    </div>
+    <div class="products-list clearfix">
+        <item-box ng-repeat="item in items"></item-box>
+    </div>
+
+    <bgf-pagination collection="items"
+        per-page="16"
+        link-group-size="1"
+        reload-page="reloadPage"
+        url="'/api/items'">
+    </bgf-pagination>
+
+
+</section>
+
+<section class="homepage-intro clearfix">
+    <div class="">
+        <div class="intro-box">
+            <i class="icon easy-buy"></i>
+            <p>一键下单</p>
+        </div>
+        <div class="intro-box">
+            <i class="icon china-made"></i>
+            <p>国内质造</p>
+        </div>
+        <div class="intro-box">
+            <i class="icon fire-speed"></i>
+            <p>火速发货</p>
+        </div>
+        <div class="intro-box">
+            <i class="icon direct-route"></i>
+            <p>直达海外</p>
+        </div>
+    </div>
+</section>
+
+<section class="footer" style="margin: 30px; text-align:center">
+
+    Copyright © 2015  粤ICP备15089582号
+</section>

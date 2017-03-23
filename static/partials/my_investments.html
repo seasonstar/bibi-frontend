@@ -1,0 +1,43 @@
+<!-- 我的投资 -->
+<section>
+    <ul class="mdtz_list">
+        <li ng-repeat="item in itemList">
+            <a ng-href="">
+                <p>{{item.orderNo}}<span class="right col_950">{{item.statusName}}</span></p>
+                <p>
+                    <b>{{item.billName}}</b>
+                    <span>年化收益 <span class="col_red">{{item.apr + '%'}}</span>购买时间&nbsp;&nbsp;{{item.payTime}}</span>
+                </p>
+                <p>
+                    <span>投资金额&nbsp;&nbsp;<span class="col_333">{{'¥' + item.money}}</span></span>
+                    <span class="right">预期收益&nbsp;&nbsp;<span class="col_333">{{'¥' + item.profit}}</span></span>
+                </p>
+                <p class="text_r">
+                    <a href="#" class="mdtz_a" ng-show="item.operateType == 0">付款</a>
+                    <a href="#" class="mdtz_a" ng-show="item.operateType == 0">取消</a>
+                    <a href="#" class="mdtz_a" ng-show="item.operateType == 1">退款</a>
+                    <a href="#" class="mdtz_a" ng-show="item.operateType == 3">转让</a>
+                    <a href="#" class="mdtz_a" ng-show="item.operateType == 4">删除</a>
+                    <a ng-href="/personal_center/my_investments/item/{{item.id}}" class="mdtz_a">详情</a>
+                </p>
+            </a>
+        </li>
+    </ul>
+</section>
+<!-- 筛选 -->
+<section class="pop_btm" ng-show="showfilter">
+    <ul ng-click="log(page)">
+        <li><a href ng-click="page.status=''">全 部</a></li>
+        <li><a href ng-click="page.status=0">等待付款</a></li>
+        <li><a href ng-click="page.status=1">付款完成</a></li>
+        <li><a href ng-click="page.status=2">付款超时</a></li>
+        <li><a href ng-click="page.status=5">退款成功</a></li>
+        <li><a href ng-click="page.status=6">已取消</a></li>
+        <li><a href ng-click="page.status=7">已还款</a></li>
+        <li><a href ng-click="showfilter=false">取 消</a></li>
+    </ul>
+</section>
+<!-- 筛选mask -->
+<div class="mask-show-filter" ng-show="showfilter">
+
+</div>

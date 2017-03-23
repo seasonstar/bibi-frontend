@@ -1,0 +1,20 @@
+<div class="">
+    <a class="btn checkout-btn" ng-if="settings.order_type=='existed'" ng-click="toggleBox()">去支付</a>
+    <button class="btn add-cart-btn" ng-if="settings.order_type=='new' || settings.order_type=='transfer'" ng-click="toggleBox()">去支付</button>
+
+    <div class='ng-modal' ng-class="{'show-option': paymentBoxShown,'ng-modal-show': modalShown}">
+        <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+        <div class='ng-modal-dialog'>
+            <div class='ng-modal-dialog-content checkout-dialog'>
+                <div class="checkout-btn-group">
+                    <button class="btn checkout-btn1" ng-click="checkout('paypal')">
+                        Palpal支付(美元)</button>
+                </div>
+                <div class="checkout-btn-group">
+                    <button class="btn checkout-btn1" ng-click="checkout('wechat')">
+                        微信支付(人民币)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

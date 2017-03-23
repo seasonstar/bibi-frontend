@@ -1,0 +1,93 @@
+<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</div>
+
+<div class="" ng-show="ngCart.getTotalItems() > 0">
+
+    <table class="table ngCart cart-table">
+        <thead>
+        <tr>
+            <td class="check-cell">
+                <span class="select-icon"
+                    ng-class="{'selected': isSelectedAll}"
+                    ng-hide="editShown"
+                    ng-click="selectAllEntries()">
+                </span>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="item in ngCart.getCart().items track by $index">
+            <td class="check-cell">
+                <span class="close-icon" ng-show="editShown" ng-click="ngCart.removeItemById(item.getId())">
+                </span>
+                <span class="select-icon"
+                    ng-class="{'selected': ngCart.getSelectedItemById(item.getId())}"
+                    ng-hide="editShown"
+                    ng-click="selectEntry(item.getId())">
+                </span>
+            </td>
+
+            <td class="img-cell">
+                <div>
+                    <a ng-href="#/items/{{item.getData().item.item_id}}">
+                        <img ng-src="{{item.getData().spec.images[0]}}">
+                    </a>
+                </div>
+            </td>
+            <td class="info-cell">
+                <div>{{ item.getName() }}</div>
+                <div>
+                    <span ng-repeat="(k, v) in item.getData().spec.attributes">
+                        {{ngCart.attrMap[k]}}: {{v}}
+                    </span>
+                </div>
+                <div class="btn-group cart-btn">
+                    <button class="btn del-num"
+                        ng-class="{'disabled':item.getQuantity()==1}"
+                        ng-click="setQuantity(item, -1, true)">-</button>
+                    <button class="btn num">{{ item.getQuantity() | number }}</button>
+                    <button class="btn add-num"
+                        ng-click="setQuantity(item, 1, true)">+</button>
+                </div>
+            </td>
+            <td class="price-cell">{{ item.getTotal() | currency }}</td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr ng-show="ngCart.getTax()">
+            <td></td>
+            <td></td>
+            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
+            <td>{{ ngCart.getTax() | currency }}</td>
+        </tr>
+        <tr ng-show="ngCart.getShipping()">
+            <td></td>
+            <td></td>
+            <td>Shipping:</td>
+            <td>{{ ngCart.getShipping() | currency }}</td>
+        </tr>
+        <tr>
+            <td class="check-cell">
+                <span ng-class="editShown ? 'checklist-icon' : 'trash-icon'" ng-click="toggleEditShown()"></span>
+            </td>
+            <td></td>
+            <td colspan="2" class="total">总计: {{ ngCart.totalCost() | currency }}</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<style>
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart .glyphicon.disabled {
+        color:#aaa;
+    }
+</style>

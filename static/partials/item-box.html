@@ -1,0 +1,21 @@
+<div class="product-box">
+    <div class="product-inner">
+        <div class="product-img">
+            <a ng-href="#/items/{{item.item_id}}">
+                <img alt="{{ item.title }}" ng-src="{{ item.primary_img }}">
+            </a>
+        </div>
+        <div class="product-elements">
+            <div class="product-prices">
+                <span class="curr-price">{{ item.price | currency}}</span>
+                <del class="orig-price">{{ item.orig_price | currency}}</del>
+
+                <specs-dialog item="item" btn="add-cart-icon"></specs-dialog>
+            </div>
+            <div class="product-title">
+                {{ item.title }}
+            </div>
+        </div>
+    </div>
+
+</div>

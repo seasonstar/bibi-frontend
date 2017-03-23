@@ -1,0 +1,72 @@
+<!-- 项目详情 -->
+<section class="xmdate">
+    <!-- 项目标题 -->
+    <h3 class="xm_title">{{item.billName}}<span class="title_rt">{{item.lowestMoney}}元起投</span></h3>
+    <div class="xmdate_cont">
+        <ul class="xmdate_xqul">
+            <li>
+                <div class="brdrg">
+                    年化收益率
+                    <br />
+                    <span class="nll nub_red">{{item.billApr}}</span>
+                    <span class="bfh"> %</span>
+                </div>
+            </li>
+            <li>
+                项目期限
+                <br />
+                <span class="nll nub_red nub_glay">{{item.billDay}}</span>
+                <span class="bfh"> 天</span>
+            </li>
+            <li>
+                <div class="Percent Percentage">
+                    <div class="process-con"></div>
+                    <div class="process-num">{{item.billPogress}}%</div>
+                </div>
+            </li>
+        </ul>
+        <div class="cl"></div>
+    </div>
+    <div class="xmdate_cont plf0">
+        <ul class="xmdate_xxul">
+            <li><b>承 兑 银 行 ：</b>{{item.payer}}</li>
+            <li><b>融 资 金 额 ：</b><span class="money">{{item.billMoney | number}}</span> 元 </li>
+            <li><b>可 投 金 额 ：</b><span class="money">{{item.surplus | number}}</span> 元</li>
+            <li><b>筹集到期日：</b>{{item.endTime}}</li>
+            <li><b>还 款 方 式 ：</b>{{['到期换本息','即买即付息'][item.payWay]}}</li>
+        </ul>
+        <div class="cl"></div>
+    </div>
+    <div class="xmdatez_start">
+        <ul class="start_ul">
+            <li ng-show="item.isYue == 1">
+                <span class="yu icon_zi">预</span> 可以预约
+            </li>
+            <li ng-show="item.isPiao == 1">
+                <span class="icon_zi piao">票</span> 可用银票
+            </li>
+            <li>
+                <span>项目等级</span>
+                <!-- 等级class为“start1到start5”-->
+                <div class="start_step start{{item.billStar}}">
+                    <span class="start5_1"></span>
+                    <span class="start5_2"></span>
+                    <span class="start5_3"></span>
+                    <span class="start5_4"></span>
+                    <span class="start5_5"></span>
+                </div>
+            </li>
+        </ul>
+        <div class="cl"></div>
+    </div>
+    <a href="#" class="btn_list">
+        <i class="icon_tub icon_tublb"></i> 产品详细
+        <i class="icon_right"></i>
+    </a>
+    <a href="#" class="btn_list">
+        <i class="icon_tub icon_tubrb"></i> 投资列表
+        <i class="icon_right"></i>
+    </a>
+
+    <a href="#" class="btn_a">立 即 投 资</a>
+</section>

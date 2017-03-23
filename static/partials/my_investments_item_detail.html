@@ -1,0 +1,64 @@
+<!-- 订单详细 -->
+<section>
+    <div class="email_div">
+        <h3>
+            <span class="title_span">当前订单状态：{{item.statusName}}</span>
+            订单信息
+        </h3>
+        <ul>
+            <li>
+                <b>订单编号</b>
+                <span class="text_r">{{item.orderNo}}</span>
+            </li>
+            <li>
+                <b>购买时间</b>
+                <span class="text_r">{{item.payTime}}</span>
+            </li>
+            <li>
+                <b>订单金额</b>
+                <span class="text_r"><i class="col_e65">{{item.money}}</i> 元</span>
+            </li>
+            <li>
+                <b>付款金额</b>
+                <span class="text_r"><i class="col_e65">{{item.payMoney}}</i> 元</span>
+            </li>
+            <li>
+                <b>银两抵扣</b>
+                <span class="text_r"><i class="col_e65">{{item.couponMoney}}</i> 元</span>
+            </li>
+            <li>
+                <b>订单收益</b>
+                <span class="text_r"><i class="col_e65">{{item.profit}}</i> 元</span>
+            </li>
+        </ul>
+        <h3 class="bor_none">项目信息</h3>
+        <ul>
+            <li>
+                <b>项目编号</b>
+                <span class="text_r">{{item.projectNo}}</span>
+            </li>
+            <li>
+                <b>项目名称</b>
+                <span class="text_r">{{item.billName}}</span>
+            </li>
+            <li>
+                <b>年化收益率</b>
+                <span class="text_r"><i class="col_e65">{{item.apr}}%</i></span>
+            </li>
+            <li>
+                <b>项目期限</b>
+                <span class="text_r">{{item.investDeadline}} 天</span>
+            </li>
+            <li>
+                <b>项目到期日</b>
+                <span class="text_r">{{item.interestEnd}}</span>
+            </li>
+            <li>
+                <b>最迟还款日</b>
+                <span class="text_r">{{item.lastDay}}</span>
+            </li>
+        </ul>
+        <a href="#" class="btn_a">转 让</a>
+    </div>
+</section>
+<!-- 订单详细 -->

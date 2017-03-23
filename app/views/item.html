@@ -1,0 +1,59 @@
+<!-- 商品详情 -->
+<section class="item-carousel clearfix" ng-cloak>
+    <div class="carousel">
+      <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex">
+        <li ng-repeat="img in images">
+            <img ng-src="{{img.url}}" alt="">
+        </li>
+      </ul>
+      <div rn-carousel-indicators ng-if="images.length > 1" slides="images" rn-carousel-index="carouselIndex"></div>
+    </div>
+</section>
+<section class="item-view clearfix">
+    <div class="item-details">
+        <div class="item-title">
+            {{ item.title }}
+        </div>
+        <div class="product-prices">
+            <span class="curr-price">{{item.price | currency}}</span>
+            <del class="orig-price">{{item.orig_price | currency}}</del>
+            <div class="product-discount">{{item.discount}}% Off</div>
+        </div>
+        <div class="item-info">
+            <div class="item-info-table">
+                <dl class="item-info-field">
+                    <dt class="item-info-key">运费：</dt>
+                    <dd class="item-info-val">满 $79 免运费</dd>
+                </dl>
+                <dl class="item-info-field">
+                    <dt class="item-info-key">商品重量：</dt>
+                    <dd class="item-info-val">{{item.weight}}g</dd>
+                </dl>
+                <dl class="item-info-field">
+                    <dt class="item-info-key">生产国家：</dt>
+                    <dd class="item-info-val">中国</dd>
+                </dl>
+                <dl class="item-info-field">
+                    <dt class="item-info-key">库存所在地：</dt>
+                    <dd class="item-info-val">中国</dd>
+                </dl>
+            </div>
+
+        </div>
+        <div class="item-desc">
+            <p class="info-header">商品详情:</p>
+            <p class="description" ng-bind-html="item.detail"></p>
+
+        </div>
+
+    </div>
+
+
+</section>
+<footer class="view-footer">
+    <div class="footer-wrapper wrapper">
+        <like-icon item="item"></like-icon>
+        <div class="footer-price">{{item.price}}</div>
+        <specs-dialog item="item" btn="add-cart-btn"></specs-dialog>
+    </div>
+</footer>

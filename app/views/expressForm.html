@@ -1,0 +1,135 @@
+<section class="clearfix" ng-cloak>
+<div class="logistic-row">
+    <span style="font-size:16px">
+        包裹寄出国流程:
+    </span>
+</div>
+<div class="logistic-row">
+    <ul class="progress-indicator">
+        <li class="completed">
+            <span class="bubble"></span>
+            <div class="logistic-status">核验清单</div>
+        </li>
+        <li ng-repeat="status in STATUES">
+            <span class="bubble"></span>
+            <div class="logistic-status">{{status}}</div>
+        </li>
+    </ul>
+</div>
+<div class="checkout-info" ng-click="gotoAddress()">
+    <div ng-show="addr.id">
+        <span class="addr-icon"></span>
+        <div class="address-info">
+            <p class="addr-header">寄往收货人信息: </p>
+            <div class="">{{addr.data.receiver}}</div>
+            <div class="">{{addr.data.street1}}</div>
+            <div class="">{{addr.data.street2}}</div>
+            <div class="">{{addr.data.city}}, {{addr.data.state}}</div>
+            <div class="">{{addr.data.country}}, {{addr.data.postcode}}</div>
+        </div>
+        <div class="select-arrow address"></div>
+    </div>
+    <div ng-hide="addr.id">
+        <span class="addr-icon"></span>
+        <div class="address-info">
+            <div class="">填写收件人信息</div>
+        </div>
+        <div class="go-add">+</div>
+    </div>
+</div>
+
+<div class="">
+    <table class="table ngCart cart-table express">
+        <thead>
+        <tr>
+            <td class="title">
+                <span>商品名称</span>
+            </td>
+            <td class="cate">
+                <span>属<a href="#/limit">敏感物品</a></span>
+            </td>
+            <td class="quantity">
+                <span>数量</span>
+            </td>
+            <td class="value">
+                <span>申报价值</span>
+            </td>
+            <td class="note">
+                <span>备注</span>
+            </td>
+            <td class="note">
+                <span></span>
+            </td>
+            <td class="ico">
+            </td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="entry in entries track by $index">
+            <td class="title">
+                {{ entry.title }}
+            </td>
+            <td class="cate">
+                {{ entry.main_category=='special'? '是': '否' }}
+            </td>
+            <td class="quantity">
+                {{ entry.quantity }}
+            </td>
+            <td class="value">
+                ￥{{ entry.amount }}
+            </td>
+            <td class="note">
+                {{ entry.remark }}
+            </td>
+            <td class="ico">
+                <span class="close-icon" ng-click="removeEntry(entry)">
+                </span>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td class="title">
+                <input class="" placeholder="eg: 大衣" type="text" ng-model="newEntry.title">
+            </td>
+            <td class="cate">
+                <div class="checkbox">
+                    <input type="checkbox" id="checkboxInput" ng-model="newEntry.main_category">
+                    <label for="checkboxInput"></label>
+                </div>
+            </td>
+            <td class="quantity">
+                <input type="number" placeholder="1" ng-model="newEntry.quantity">
+            </td>
+            <td class="value">
+                <input type="number" placeholder="人民币" ng-model="newEntry.amount">
+            </td>
+            <td class="note">
+                <input type="text" placeholder="eg: 颜色尺码" ng-model="newEntry.remark">
+            </td>
+            <td class="ico">
+                <span class="add-icon" ng-click="addEntry(newEntry)">
+                </span>
+            </td>
+          </tr>
+        </tfoot>
+    </table>
+</div>
+</section>
+<section >
+    <div class="express-noti">
+        <p>下单须知: </p>
+        <p>1. 提交清单后，美比工作人员会先核实，核实通过后订单进入“跟踪快递”。</p>
+        <p>2. “跟踪快递”状态后，用户把待寄物品寄到美比仓库收货地址，并尽快填写包裹的快递单号。</p>
+        <p>3. 包裹到达仓库之后，进入“入库称重”，用户根据称得重量，选择运输方式后交付运费。</p>
+        <p>4. 交付运费后，订单进入"支付运费"。仓库人员将24小时内提交运输。</p>
+    </div>
+</section>
+
+<footer class="view-footer">
+    <div class="footer-wrapper wrapper">
+        <button class="btn add-cart-btn" ng-click="submit()">提交清单</button>
+    </div>
+</footer>

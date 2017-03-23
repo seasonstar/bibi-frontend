@@ -1,0 +1,53 @@
+<!-- 运费估算 -->
+<section>
+<form name="queryForm" ng-submit="queryFee()">
+    <table class="table address-table">
+        <tbody>
+        <tr >
+            <td class="label">
+                国家
+            </td>
+            <td class="input-control">
+                <select placeholder="请选择寄往国家" ng-model="query.country" name="country"
+                    ng-options="country for country in COUNTRIES" required>
+                </select>
+                <span class="warning"
+                    ng-show="queryForm.country.$error.required && !queryForm.country.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                重量
+            </td>
+            <td class="input-control">
+                <input placeholder="请输入商品重量" type="number" ng-model="query.weight" name="weight" required />(克)
+                <span class="warning"
+                    ng-show="queryForm.weight.$error.required && !queryForm.weight.$pristine">必填</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="login-btn-group">
+        <button type="submit" class="login-btn" ng-disabled="disabled">费用估算</button>
+    </div>
+</form>
+</section>
+
+<section>
+<div class="address-select-info">
+    <div class="address-row" ng-repeat="provider in provider_prices">
+        <div class="address-info provider">
+            <div class="info-header">{{provider.name}}
+                ({{provider.service_intro.duration}})</div>
+            <div class="desc">首重{{provider.init_weight}}g/${{provider.init_price}}，
+                续重{{provider.continued_weight}}g/${{provider.continued_price}}</div>
+            <div class="desc">{{provider.rule_desc}}</div>
+        </div>
+        <div>
+            <span class="provider-price">
+                {{provider.cn_shipping | currency }}
+            </span>
+        </div>
+    </div>
+</div>
+</section>

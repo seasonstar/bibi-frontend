@@ -1,0 +1,52 @@
+<section class="account">
+    <div class="avatar-section">
+        <a href="#/account/avatar" class="logo">
+            <p><img class="avatar" ng-src="{{user.avatar_url}}" alt=""></p>
+            <p class="user">{{user.name}}</p>
+        </a>
+    </div>
+
+    <div class="account-entries">
+        <a href="#/orders" class="entry">
+            <span class="icon-span order"></span>
+            <span class="entry-nav">我的订单</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+
+        <a href="#/favors" class="entry">
+            <span class="icon-span favor"></span>
+            <span class="entry-nav">我的喜欢</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+
+        <a href="#/address/list" class="entry">
+            <span class="icon-span home-address"></span>
+            <span class="entry-nav">收货地址</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+    </div>
+
+    <div class="account-entries">
+        <a href="#/faq" class="entry">
+            <span class="icon-span faq"><i class="icon icon_space_faq"></i></span>
+            <span class="entry-nav">常见问题</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+
+        <a href="#/customer-service" class="entry">
+            <span class="icon-span cs"><i class="icon icon_space_contact"></i></span>
+            <span class="entry-nav">联系客服</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+
+        <a href="#/feedback" class="entry">
+            <span class="icon-span feedback"><i class="icon icon_space_feedback"></i></span>
+            <span class="entry-nav">意见反馈</span>
+            <span class=""><i class="right-arrow"></i></span>
+        </a>
+    </div>
+    <div ng-controller="logoutCtrl" class="login-btn-group">
+        <button ng-click='logout()' class="login-btn">退出账号</button>
+    </div>
+
+</section>

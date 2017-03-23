@@ -1,0 +1,24 @@
+<!-- 商品列表 -->
+<section class="board-products clearfix">
+    <div class="products-list clearfix">
+        <item-box ng-repeat="item in items"></item-box>
+    </div>
+
+    <bgf-pagination collection="items"
+        per-page="20"
+        reload-page="reloadPage"
+        url-params='params'
+        url="'/api/items'">
+    </bgf-pagination>
+
+</section>
+<section class="msg">
+    <div class="" ng-show="items.length == 0">Oppppss, 没有相关商品</div>
+
+</section>
+<footer class="view-footer">
+    <div class="footer-wrapper wrapper">
+        <button class="btn add-cart-btn" ng-click="toggleCatePanel()">筛选</button>
+    </div>
+<cate-panel show="cateShown"></cate-panel>
+</footer>

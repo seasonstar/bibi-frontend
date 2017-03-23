@@ -1,0 +1,18 @@
+<div class="headerBox">
+    <a class="header-left icon {{l_btn.icon}}" href
+        ng-click="header_l_handler(l_btn.ngHref)">
+        {{l_btn.text}}
+    </a>
+    <h1 class="header-title">{{getPageTitle}}</h1>
+    <div class="header-right">
+        <!--<a class="icon search"
+            ng-href="{{r_btn.ngHref}}"
+            ng-click="header_r_handler(r_btn.ngHref)">
+        </a> -->
+        <a class="icon {{r_btn.icon}}" href
+            ng-click="header_r_handler(r_btn.ngHref)">
+        <ngcart-summary ng-show="r_btn.icon == 'cart'"></ngcart-summary>
+        {{r_btn.text}}
+        </a>
+    </div>
+</div>

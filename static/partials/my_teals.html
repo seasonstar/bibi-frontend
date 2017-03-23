@@ -1,0 +1,32 @@
+<!-- 当前、历史 -->
+<section class="list_wdyl">
+    <ul class="list_wdyl_ul">
+        <li><a href class="current">当前</a></li>
+        <li><a href >历史</a></li>
+    </ul>
+</section>
+<!-- 当前、历史END -->
+
+<!-- 我的银两list -->
+<section class="mdyl_list">
+    <ul class="mdyl_list_ul" ng-show="itemList">
+        <li ng-repeat="item in itemList">
+            <div class="bgred">
+                <div class="mdyl_list_left">
+                    <h4>银票剩余面值 {{item.money}} 两</h4>
+                    <p>过期时间：{{item.validtime}}</p>
+                </div>
+                <div class="mdyl_list_right">
+                    <p>{{item.createTime}}</p>
+                    <p>至</p>
+                    <p>{{item.validtime}}</p>
+                    <h4>{{typeList[item.type]}}</h4>
+                </div>
+                <div class="yinl"><span class="fz20">{{item.initMoney}}</span> 两</div>
+            </div>
+        </li>
+    </ul>
+    <p class="text_c">当前剩余银两数 <span class="nubs">{{teal}}</span> 两</p>
+    <a href class="btn_a">立即使用</a>
+</section>
+<!-- 我的银两list END -->

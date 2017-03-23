@@ -1,0 +1,13 @@
+<div ng-show="attrs.id">
+    <div>
+        <a class="btn add-cart-btn"
+           ng-click="ngCart.addItem(id, name, price, quantity, data)"
+           ng-transclude></a>
+    </div>
+</div>
+<div ng-hide="attrs.id">
+    <a class="btn btn-empty" ng-transclude
+        ng-click="alertWarning()"
+        ></a>
+
+</div>

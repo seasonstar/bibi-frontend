@@ -1,0 +1,53 @@
+<!-- 投资列表 -->
+<section class="invest-page">
+
+    <div class="nav_list">
+        <ul>
+            <li ng-class="{current: '' === page.type}" ng-click="switchTab('')">
+                <span>全部</span>
+            </li>
+            <li ng-class="{current: 0 === page.type}" ng-click="switchTab(0)">
+                <span>银票理财</span>
+            </li>
+            <li ng-class="{current: 1 === page.type}" ng-click="switchTab(1)">
+                <span>银商理财</span>
+            </li>
+            <li ng-class="{current: 4 === page.type}" ng-click="switchTab(4)">
+                <span>转让项目</span>
+            </li>
+            <li ng-class="{current: 5 === page.type}" ng-click="switchTab(5)">
+                <span>第三方平台</span>
+            </li>
+        </ul>
+        <div class="cl"></div>
+    </div>
+
+
+    <ul class="xm_list" ng-show="itemList">
+        <li ng-repeat="item in itemList">
+            <a ng-href="/invest/{{item.billId}}" class="content">
+                <div class="Percentage wid20">
+                    <div class="process-con"></div>
+                    <div class="process-num">{{item.billPogress + '%'}}</div>
+                </div>
+                <div class="wid80">
+                    <h3><span class="zhr">{{billTypeList[item.billType]}}</span>{{item.billName}}</h3>
+                    <ul class="zxxm_ul">
+                        <li><span class="nub_red">{{item.billApr}}</span> %
+                            <br />年化收益率</li>
+                        <li><span class="nub_red nub_glay">{{item.billDay}}</span> 天
+                            <br />项目期限</li>
+                        <li><span class="nub_red nub_glay">{{item.billMoney | number}}</span> 万
+                            <br />融资金额</li>
+                    </ul>
+                </div>
+                <div class="cl"></div>
+            </a>
+        </li>
+    </ul>
+</section>
+<section class="pagenation-btn">
+        <a href ng-hide="page.page === 1" ng-click="flipFlop('-')">上一页</a>
+        <a href ng-hide="itemList.length < 15" ng-click="flipFlop('+')">下一页</a>
+</section>
+<!-- 投资列表 END -->

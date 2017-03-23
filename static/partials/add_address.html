@@ -1,0 +1,102 @@
+<!-- 添加地址 -->
+
+<section>
+<form name="addressForm" ng-submit="saveAddress()">
+
+    <table class="table address-table">
+        <tbody>
+        <tr >
+            <td class="label">
+                收件人全称
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.receiver" name="receiver" required />
+                <span class="warning"
+                    ng-show="addressForm.receiver.$error.required && !addressForm.receiver.$pristine">请填写收件人全称</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                地址 1
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.street1" name="street1" required />
+                <span class="warning"
+                    ng-show="addressForm.street1.$error.required && !addressForm.street1.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                地址 2
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.street2">
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                城市
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.city" name="city" required />
+                <span class="warning"
+                    ng-show="addressForm.city.$error.required && !addressForm.city.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                州/省
+            </td>
+            <td class="input-control">
+                <select ng-model="addr.state" name="state" required>
+                    <option></option>
+                    <option ng-selected="addr.state == k" value="{{k}}" ng-repeat="(k, v) in REGIONS">{{v}}</option>
+                </select>
+                <span class="warning"
+                    ng-show="addressForm.state.$error.required && !addressForm.state.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                邮编
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.postcode" name="postcode" required />
+                <span class="warning"
+                    ng-show="addressForm.postcode.$error.required && !addressForm.postcode.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                国家
+            </td>
+            <td class="input-control">
+                <select ng-model="addr.country" name="country" required>
+                    <option></option>
+                    <option ng-selected="addr.country== k" value="{{k}}" ng-repeat="k in COUNTRIES">{{k}}</option>
+                </select>
+                <span class="warning"
+                    ng-show="addressForm.country.$error.required && !addressForm.country.$pristine">必填</span>
+            </td>
+        </tr>
+        <tr >
+            <td class="label">
+                联系电话
+            </td>
+            <td class="input-control">
+                <input ng-model="addr.mobile_number" name="mobile_number" required />
+                <span class="warning"
+                    ng-show="addressForm.mobile_number.$error.required && !addressForm.mobile_number.$pristine">必填</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <footer class="view-footer">
+        <div class="footer-wrapper wrapper">
+            <button class="confirm-btn">保存</button>
+        </div>
+    </footer>
+
+</form>
+</section>

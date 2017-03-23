@@ -1,0 +1,13 @@
+<!-- 购物车 -->
+<section class="clearfix" ng-cloak>
+    <ngcart-cart></ngcart-cart>
+</section>
+<footer class="view-footer">
+    <div class="footer-wrapper wrapper">
+        <div class="footer-text">商品价: </div>
+        <div class="footer-price">{{ ngCart.totalCost() | currency }}</div>
+        <a class="btn add-cart-btn" href="#/checkout">
+            结算({{ngCart.getTotalSelectedItems()}})
+        </a>
+    </div>
+</footer>

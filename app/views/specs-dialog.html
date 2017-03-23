@@ -1,0 +1,54 @@
+<div class="pull-right">
+    <a class="btn {{btn}}" ng-click="specsBox(item.item_id)">{{btn == 'add-cart-btn'?"加入购物车":""}}</a>
+    <div class='ng-modal' ng-class="{'show-option': specsBoxShown,'ng-modal-show': modalShown}">
+        <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+        <div class='ng-modal-dialog'>
+            <div class='ng-modal-dialog-content'>
+
+                    <div class="spec-wrapper">
+                        <div class="spec-img">
+                            <img ng-src="{{selectedSpec.images[0]}}">
+                        </div>
+                        <div class="spec-info">
+                            <div>{{selectedItem.title}}</div>
+                            <div>{{selectedSpec.price}} x {{quantity}}</div>
+                        </div>
+                    </div>
+                    <div class="spec-options">
+                        <div class="spec-options-table">
+                            <dl class="spec-info-field" ng-repeat="(k, v) in selectedItem.attributes_desc">
+                                <dt class="spec-info-key">{{v}}</dt>
+                                <dd class="spec-info-val">
+                                <span class="spec-attr"
+                                    ng-class="{'selected': attr==selectedAttr[k],
+                                            'disabled': remainSpec.indexOf(attr) == -1}"
+                                    ng-click="setAttr(k, attr)"
+                                    ng-repeat="attr in attrChoices[k]">
+                                        {{attr}}
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="spec-info-field">
+                                <dt class="spec-info-key">数量：</dt>
+                                <dd class="spec-info-val">
+                                    <div class="btn-group">
+                                        <button class="btn del-num"
+                                            ng-click="setQuantity(-1, true)">-</button>
+                                        <button class="btn num">{{quantity}}</button>
+                                        <button class="btn add-num"
+                                            ng-click="setQuantity(1, true)">+</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="clearfix footer-wrapper spec-footer wrapper">
+                        <like-icon item="selectedItem"></like-icon>
+                        <div class="footer-price">{{subTotal(selectedSpec.price, quantity)}}</div>
+                        <ngcart-addtocart class="ngcart-addtocart" id="{{selectedSpec.sku}}" name="{{selectedItem.title}}" price="{{selectedSpec.price}}" quantity="{{quantity}}" quantity-max="5" data="selectedSpecData">加入购物车</ngcart-addtocart>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

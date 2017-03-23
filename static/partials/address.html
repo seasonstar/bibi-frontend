@@ -1,0 +1,47 @@
+<!-- 地址栏 -->
+<section>
+<div class="address-select-info" ng-show="addresses.length != 0">
+    <div class="address-row" ng-repeat="addr in addresses"
+        ng-click="selectAddress(addr)">
+        <span class="addr-icon"></span>
+        <div class="address-info">
+            <div class="">{{addr.receiver}}</div>
+            <div class="">{{addr.street1}}</div>
+            <div class="">{{addr.street2}}</div>
+            <div class="">{{addr.city}}, {{addr.state}}</div>
+            <div class="">{{addr.country}}, {{addr.postcode}}</div>
+        </div>
+        <div ng-hide="editShown">
+            <span class="address-edit">
+                <a ng-href="#/address/edit/{{addr.id}}">修改地址</a>
+            </span>
+            <span class="select-icon select"
+                ng-class="{'selected': selectedAddress == addr}">
+            </span>
+        </div>
+        <div  ng-show="editShown">
+            <span class="close-icon" ng-click="removeAddr(addr.id)">
+        </div>
+    </div>
+</div>
+</section>
+
+<section>
+<div class="address-select-info" ng-click="goAdd()">
+    <div class="address-row">
+        <span class="addr-icon"></span>
+        <div class="address-info">
+            <div class="">新增收件地址</div>
+        </div>
+        <div class="go-add">+</div>
+    </div>
+
+</div>
+</section>
+
+<footer class="view-footer">
+    <div class="footer-wrapper wrapper">
+        <span class="footer-icon" ng-class="editShown ? 'checklist-icon' : 'trash-icon'" ng-click="toggleEditShown()"></span>
+        <button ng-click="confirmAddress()" class="confirm-btn">确定</button>
+    </div>
+</footer>
