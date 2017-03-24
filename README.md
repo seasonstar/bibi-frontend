@@ -1,6 +1,10 @@
-# maybi-frontend
+# bibi-frontend
+Bibi 电商全栈解决方案
 
-配合 [bibi server](https://github.com/seasonstar/bibi) 服务端项目 使用
+配合以下项目使用:
+[bibi server](https://github.com/seasonstar/bibi) 服务端项目
+
+[bibi-ionic](https://github.com/seasonstar/bibi) mobile app源码
 
 ----------------------------
 
@@ -11,6 +15,10 @@
 3. 执行 `npm install` 安装依赖
 4. 执行 `gulp dev` 进入开发环境，浏览器会自动打开，监控代码改变并自动更新
 5. 执行 `gulp deploy`，代码自动编译并压缩，输出到/build
+
+### Screenshot
+
+![](http://7xn6eu.com1.z0.glb.clouddn.com/frontend.jpeg)
 
 ### Deploy
 
