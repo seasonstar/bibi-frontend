@@ -2,9 +2,10 @@
 Bibi 电商全栈解决方案
 
 配合以下项目使用:
-[bibi server](https://github.com/seasonstar/bibi) 服务端项目
 
-[bibi-ionic](https://github.com/seasonstar/bibi) mobile app源码
+> [bibi server](https://github.com/seasonstar/bibi) 服务端项目
+
+> [bibi-ionic](https://github.com/seasonstar/bibi-frontend) mobile app源码
 
 ----------------------------
 
